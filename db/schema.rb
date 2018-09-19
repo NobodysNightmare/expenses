@@ -29,11 +29,13 @@ ActiveRecord::Schema.define(version: 2018_09_19_071200) do
 
   create_table "expenses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category_id", null: false
+    t.date "date", null: false
     t.string "description", null: false
-    t.decimal "amount", precision: 10, null: false
+    t.decimal "amount", precision: 8, scale: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_expenses_on_category_id"
+    t.index ["date"], name: "index_expenses_on_date"
   end
 
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

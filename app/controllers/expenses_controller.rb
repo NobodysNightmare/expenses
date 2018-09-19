@@ -2,7 +2,7 @@
 
 class ExpensesController < ApplicationController
   def index
-    @expenses = Expense.order(time: :desc)
+    @expenses = Expense.order(date: :desc)
                        .page(params[:page])
                        .per(100)
   end

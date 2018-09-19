@@ -32,6 +32,7 @@ de:
       category:
         name: Name
       expense:
-        description: Beschreibung
-        category_id: Kategorie
         amount: Betrag
+        category_id: Kategorie
+        description: Beschreibung
+        date: Datum

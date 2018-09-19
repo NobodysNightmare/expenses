@@ -2,8 +2,7 @@
 
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.order(time: :desc)
-                          .page(params[:page])
+    @categories = Category.page(params[:page])
                           .per(100)
   end
 
