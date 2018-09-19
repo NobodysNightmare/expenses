@@ -1,0 +1,37 @@
+de:
+  action_column: Aktionen
+  confirm_delete_model: "%{model} wirklich löschen?"
+  confirm_delete_named: "'%{name}' wirklich löschen?"
+  time_ago: "vor %{time}"
+  actions:
+    edit: Bearbeiten
+    new: Neu
+  buttons:
+    create_model: "%{model} erstellen"
+    save: "Speichern"
+    edit: "Bearbeiten"
+    delete: "Löschen"
+  flashs:
+    created_model: "%{model} wurde erstellt."
+    updated_model: "%{model} wurde gespeichert."
+    destroyed_model: "%{model} wurde gelöscht."
+  titles:
+    brand: Ausgaben
+    new_model: "%{model} anlegen"
+    edit_model: "%{model} bearbeiten"
+    destroy_model: "%{model} löschen"
+  activerecord:
+    models:
+      category:
+        one: Kategorie
+        other: Kategorien
+      expense:
+        one: Ausgabe
+        other: Ausgaben
+    attributes:
+      category:
+        name: Name
+      expense:
+        description: Beschreibung
+        category_id: Kategorie
+        amount: Betrag

@@ -1,0 +1,37 @@
+en:
+  action_column: Actions
+  confirm_delete_model: "Really delete %{model}?"
+  confirm_delete_named: "Really delete '%{name}'?"
+  time_ago: "%{time} ago"
+  actions:
+    edit: Edit
+    new: New
+  buttons:
+    create_model: "Create %{model}"
+    save: "Save"
+    edit: "Edit"
+    delete: "Delete"
+  flashs:
+    created_model: "%{model} was created."
+    updated_model: "%{model} was updated."
+    destroyed_model: "%{model} was deleted."
+  titles:
+    brand: Expenses
+    new_model: "New %{model}"
+    edit_model: "Edit %{model}"
+    destroy_model: "Delete %{model}"
+  activerecord:
+    models:
+      category:
+        one: Category
+        other: Categories
+      expense:
+        one: Expense
+        other: Expenses
+    attributes:
+      category:
+        name: Name
+      expense:
+        description: Description
+        category_id: Category
+        amount: Amount

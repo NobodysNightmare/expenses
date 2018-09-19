@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - bin/rails
+    - bin/spring
+    - db/schema.rb
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - context
+
+Metrics/LineLength:
+  Max: 120

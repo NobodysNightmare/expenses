@@ -1,0 +1,8 @@
+en:
+  time:
+    formats:
+      time: "%H:%M"
+      date: "%d.%m.%Y"
+      week: "%V/%G"
+      month: "%B %Y"
+      year: "%Y"
