@@ -1,0 +1,19 @@
+.row.justify-content-between
+  %h1.col-auto= t('.title')
+  .col-auto
+    %a.btn.btn-success.mb-2{ href: new_category_path }
+      = t('buttons.create_model', model: Category.model_name.human)
+
+%table.table
+  %thead
+    %tr
+      %th= Category.human_attribute_name(:name)
+      %th= t('action_column')
+  - @categories.each do |category|
+    %tr
+      %td= category.name
+      %td
+        %a.btn.btn-light.btn-sm{ href: edit_category_path(category), title: t('actions.edit') }
+          %span.fa.fa-pen
+
+= paginate(@categories)

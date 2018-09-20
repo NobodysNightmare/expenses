@@ -8,6 +8,11 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    render :edit
+  end
+
+  def edit
+    @category = Category.find(params[:id])
   end
 
   def create
@@ -30,7 +35,7 @@ class CategoriesController < ApplicationController
       flash_errors(category.errors)
     end
 
-    redirect_to action: :edit
+    redirect_to action: :index
   end
 
   def destroy
