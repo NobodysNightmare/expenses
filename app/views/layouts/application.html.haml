@@ -21,12 +21,13 @@
             %a.nav-link{href: categories_path}= Category.model_name.human(count: 2)
 
     .container-fluid
-      - flash.each do |type, message|
-        - if type == 'success'
-          .alert.alert-success
-            = message
-        - else
-          .alert.alert-danger
-            = message
+      - flash.each do |type, messages|
+        .alert{ class: type == 'success' ? 'alert-success' : 'alert-danger' }
+          - if Array(messages).size > 1
+            %ul.m-0
+              - messages.each do |message|
+                %li= message
+          - else
+            = Array(messages).first
 
       = yield
