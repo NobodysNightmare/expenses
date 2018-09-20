@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :expenses, only: %i[index new edit create update destroy]
 
   namespace :api do
-
   end
 
   get '/login', to: 'sessions#new'
