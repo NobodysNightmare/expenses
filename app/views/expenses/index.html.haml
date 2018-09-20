@@ -1,4 +1,8 @@
-%h1= t('.title')
+.row.justify-content-between
+  %h1.col-auto= t('.title')
+  .col-auto
+    %a.btn.btn-success.mb-2{ href: new_expense_path }
+      = t('buttons.create_model', model: Expense.model_name.human)
 
 %table.table
   %thead
@@ -9,7 +13,7 @@
   - @expenses.each do |expense|
     %tr
       %td= I18n.l(expense.date)
-      %td= expense.description
+      %td= link_to expense.description, edit_expense_path(expense)
       %td= format_amount expense.amount
 
 = paginate(@expenses)

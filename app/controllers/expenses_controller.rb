@@ -8,7 +8,12 @@ class ExpensesController < ApplicationController
   end
 
   def new
-    @expense = Expense.new
+    @expense = Expense.new(date: Date.today)
+    render :edit
+  end
+
+  def edit
+    @expense = Expense.find(params[:id])
   end
 
   def create
@@ -44,6 +49,6 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:description, :category_id, :amount)
+    params.require(:expense).permit(:date, :description, :category_id, :amount)
   end
 end

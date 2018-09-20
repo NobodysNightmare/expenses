@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def site_options(selected = nil)
-    sites = Site.all
+  def category_options(selected = nil)
+    categories = Category.all
     options_for_select(
-      sites.map { |s| [s.name, s.id] },
+      categories.map { |c| [c.name, c.id] },
       selected
     )
   end

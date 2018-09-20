@@ -1,0 +1,35 @@
+.panel.panel-default
+  .panel-heading
+    - if @expense.new_record?
+      = I18n.t('titles.new_model', model: Expense.model_name.human)
+    - else
+      = I18n.t('titles.edit_model', model: Expense.model_name.human)
+  .panel-body
+    = form_with model: @expense do |f|
+      .form-group
+        = f.label :date
+        = f.text_field :date, class: 'form-control', type: 'date', value: @expense.date.iso8601
+
+      .form-group
+        = f.label :description
+        = f.text_field :description, class: 'form-control'
+
+      .form-group
+        = f.label :amount
+        = f.text_field :amount, class: 'form-control', type: 'number', step: '0.01'
+
+      .form-group
+        = f.label :category_id
+        = f.select :category_id, category_options(@expense.category_id), {}, class: 'form-control'
+
+      = f.submit I18n.t('buttons.save'), class: 'btn btn-success'
+
+- unless @expense.new_record?
+  .card.my-3
+    .card-header.bg-danger.text-white
+      = I18n.t('titles.destroy_model', model: Expense.model_name.human)
+    .card-body
+      = link_to I18n.t('buttons.delete'), expense_path(@expense),
+                method: :delete,
+                class: 'btn btn-danger',
+                data: { confirm: I18n.t('confirm_delete_named', name: @expense.description) }
