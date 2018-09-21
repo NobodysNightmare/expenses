@@ -26,15 +26,21 @@
   .col-12.col-md-6
     .card.mb-3
       .card-header= t('.top_categories.title')
-      %table.table
-        %thead
-          %tr
-            %th= Category.human_attribute_name(:name)
-            %th= Expense.human_attribute_name(:amount)
-        - @top_categories.each do |category, total_amount|
-          %tr
-            %td= category.name
-            %td= format_amount(total_amount)
+      .card-body
+        %select.form-control.form-control-sm.update-on-select{ data: { target: '#top_categories_content', url: top_categories_summary_index_path, param: 'interval' } }
+          %option{ value: 'week' }= t('.top_categories.week')
+          %option{ value: 'month', selected: true }= t('.top_categories.month')
+          %option{ value: 'year' }= t('.top_categories.year')
+      #top_categories_content
+        %table.table
+          %thead
+            %tr
+              %th= Category.human_attribute_name(:name)
+              %th= Expense.human_attribute_name(:amount)
+          - TopCategories::COUNT.times do
+            %tr
+              %td= t('.top_categories.loading')
+              %td
 
 .row
   .col-12

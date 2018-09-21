@@ -1,17 +1,20 @@
 # frozen_string_literal: true
 
 class TopCategories
+  COUNT = 5
+
   attr_reader :expenses
 
-  def initialize(expenses)
+  def initialize(expenses, interval)
     @expenses = expenses
+    @interval = interval
   end
 
   def calculate
-    Expense.where(date: DateInterval.month(Date.current))
+    Expense.where(date: DateInterval.interval(@interval, Date.current))
            .group(:category)
            .order('SUM(amount) DESC')
-           .limit(5)
+           .limit(COUNT)
            .sum(:amount)
   end
 end

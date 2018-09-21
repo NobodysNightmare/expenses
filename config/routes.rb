@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resources :categories, only: %i[index new edit create update destroy]
   resources :expenses, only: %i[index new edit create update destroy] do
     collection do
-      get 'summary', to: 'expenses_summary#index'
+      resources :summary, controller: :expenses_summary, only: [:index] do
+        collection do
+          get 'top_categories', to: 'expenses_summary#top_categories'
+        end
+      end
     end
   end
 

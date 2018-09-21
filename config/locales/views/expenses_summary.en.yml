@@ -5,7 +5,11 @@ en:
         title: Latest Expenses
       title: Expenses Summary
       top_categories:
+        loading: Loading...
+        month: This month
         title: Top Categories
+        week: This week
+        year: This year
       totals:
         current: Current
         month: Month

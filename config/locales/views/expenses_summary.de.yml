@@ -5,7 +5,11 @@ de:
         title: Letzte Ausgaben
       title: Ausgabenzusammenfassung
       top_categories:
+        loading: Lädt...
+        month: This month
         title: Top Kategorien
+        week: This week
+        year: This year
       totals:
         current: Aktuelle
         month: Monat
