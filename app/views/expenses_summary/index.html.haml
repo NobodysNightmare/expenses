@@ -1,0 +1,30 @@
+%h1= t('.title')
+
+.row.mb-3
+  .col-12.col-md-6
+    .card
+      .card-header= t('.totals.title')
+      %table.table
+        %thead
+          %tr
+            %th
+            %th= t('.totals.previous')
+            %th= t('.totals.current')
+        %tr
+          %td= t('.totals.week')
+          %td= format_amount(@expense_totals.weekly.previous)
+          %td= format_amount(@expense_totals.weekly.current)
+        %tr
+          %td= t('.totals.month')
+          %td= format_amount(@expense_totals.monthly.previous)
+          %td= format_amount(@expense_totals.monthly.current)
+        %tr
+          %td= t('.totals.year')
+          %td= format_amount(@expense_totals.yearly.previous)
+          %td= format_amount(@expense_totals.yearly.current)
+
+.row
+  .col-12
+    .card
+      .card-header= t('.latest_expenses.title')
+      = render 'expenses/table', expenses: @latest_expenses

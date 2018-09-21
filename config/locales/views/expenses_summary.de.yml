@@ -1,0 +1,13 @@
+de:
+  expenses_summary:
+    index:
+      latest_expenses:
+        title: Letzte Ausgaben
+      title: Ausgabenzusammenfassung
+      totals:
+        current: Aktuelle
+        month: Monat
+        previous: Letzte
+        title: Summen
+        week: Woche
+        year: Jahr

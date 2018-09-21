@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      %th= Expense.human_attribute_name(:date)
+      %th= Expense.human_attribute_name(:description)
+      %th= Expense.human_attribute_name(:amount)
+  - expenses.each do |expense|
+    %tr
+      %td= I18n.l(expense.date)
+      %td= link_to expense.description, edit_expense_path(expense)
+      %td= format_amount expense.amount
+
+- if expenses.respond_to? :total_pages
+  = paginate(expenses)

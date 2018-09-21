@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'expenses#index'
+  root 'expenses_summary#index'
 
   resources :categories, only: %i[index new edit create update destroy]
-  resources :expenses, only: %i[index new edit create update destroy]
+  resources :expenses, only: %i[index new edit create update destroy] do
+    collection do
+      get 'summary', to: 'expenses_summary#index'
+    end
+  end
 
   namespace :api do
   end

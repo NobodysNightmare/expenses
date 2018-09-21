@@ -1,0 +1,13 @@
+en:
+  expenses_summary:
+    index:
+      latest_expenses:
+        title: Latest Expenses
+      title: Expenses Summary
+      totals:
+        current: Current
+        month: Month
+        previous: Previous
+        title: Totals
+        week: Week
+        year: Year

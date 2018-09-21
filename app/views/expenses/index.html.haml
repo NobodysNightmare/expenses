@@ -4,16 +4,4 @@
     %a.btn.btn-success.mb-2{ href: new_expense_path }
       = t('buttons.create_model', model: Expense.model_name.human)
 
-%table.table
-  %thead
-    %tr
-      %th= Expense.human_attribute_name(:date)
-      %th= Expense.human_attribute_name(:description)
-      %th= Expense.human_attribute_name(:amount)
-  - @expenses.each do |expense|
-    %tr
-      %td= I18n.l(expense.date)
-      %td= link_to expense.description, edit_expense_path(expense)
-      %td= format_amount expense.amount
-
-= paginate(@expenses)
+= render 'table', expenses: @expenses
