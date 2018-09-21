@@ -9,11 +9,13 @@ class ExpensesController < ApplicationController
 
   def new
     @expense = Expense.new(date: Date.today)
+    @description_autocomplete = description_autocomplete
     render :edit
   end
 
   def edit
     @expense = Expense.find(params[:id])
+    @description_autocomplete = description_autocomplete
   end
 
   def create
@@ -50,5 +52,9 @@ class ExpensesController < ApplicationController
 
   def expense_params
     params.require(:expense).permit(:date, :description, :category_id, :amount)
+  end
+
+  def description_autocomplete
+    Expense.order(:description).pluck('DISTINCT(description)')
   end
 end

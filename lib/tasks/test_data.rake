@@ -15,11 +15,12 @@ namespace :test_data do
     500.times do
       time = rand(0..180)
       amount = rand * 100
+      category = categories.sample
       Expense.create!(
-        description: 'Some expense',
+        description: "Some expense #{category.id}",
         date: time.days.ago,
         amount: amount,
-        category: categories.sample
+        category: category
       )
     end
   end

@@ -12,7 +12,10 @@
 
       .form-group
         = f.label :description
-        = f.text_field :description, class: 'form-control'
+        = f.text_field :description, class: 'form-control', list: 'description-list'
+        %datalist#description-list
+          - @description_autocomplete.each do |entry|
+            %option= entry
 
       .form-group
         = f.label :amount
