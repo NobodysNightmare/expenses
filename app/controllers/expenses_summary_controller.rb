@@ -5,5 +5,6 @@ class ExpensesSummaryController < ApplicationController
     @latest_expenses = Expense.order(date: :desc)
                               .limit(5)
     @expense_totals = ExpenseTotals.new(Expense.all)
+    @top_categories = TopCategories.new(Expense.all).calculate
   end
 end

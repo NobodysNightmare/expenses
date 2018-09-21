@@ -23,6 +23,19 @@
           %td= format_amount(@expense_totals.yearly.previous)
           %td= format_amount(@expense_totals.yearly.current)
 
+  .col-12.col-md-6
+    .card
+      .card-header= t('.top_categories.title')
+      %table.table
+        %thead
+          %tr
+            %th= Category.human_attribute_name(:name)
+            %th= Expense.human_attribute_name(:amount)
+        - @top_categories.each do |category, total_amount|
+          %tr
+            %td= category.name
+            %td= format_amount(total_amount)
+
 .row
   .col-12
     .card

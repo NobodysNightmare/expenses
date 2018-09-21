@@ -4,6 +4,8 @@ de:
       latest_expenses:
         title: Letzte Ausgaben
       title: Ausgabenzusammenfassung
+      top_categories:
+        title: Top Kategorien
       totals:
         current: Aktuelle
         month: Monat

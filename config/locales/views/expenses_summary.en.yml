@@ -4,6 +4,8 @@ en:
       latest_expenses:
         title: Latest Expenses
       title: Expenses Summary
+      top_categories:
+        title: Top Categories
       totals:
         current: Current
         month: Month
