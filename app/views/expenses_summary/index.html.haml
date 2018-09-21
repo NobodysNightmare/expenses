@@ -1,8 +1,8 @@
 %h1= t('.title')
 
-.row.mb-3
+.row
   .col-12.col-md-6
-    .card
+    .card.mb-3
       .card-header= t('.totals.title')
       %table.table
         %thead
@@ -24,7 +24,7 @@
           %td= format_amount(@expense_totals.yearly.current)
 
   .col-12.col-md-6
-    .card
+    .card.mb-3
       .card-header= t('.top_categories.title')
       %table.table
         %thead
