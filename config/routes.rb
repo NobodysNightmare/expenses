@@ -11,6 +11,9 @@ Rails.application.routes.draw do
           get 'top_categories', to: 'expenses_summary#top_categories'
         end
       end
+
+      get :import, to: 'import_expenses#index'
+      post :import, to: 'import_expenses#create'
     end
   end
 

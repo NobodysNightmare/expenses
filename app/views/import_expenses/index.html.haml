@@ -1,0 +1,10 @@
+%h1= t('.title')
+
+.card
+  = form_with url: { controller: :import_expenses, action: :create } do |f|
+    .card-body
+      .form-group
+        = f.label :import_string
+        = f.text_area :import_string, class: 'form-control'
+    .card-footer
+      = f.submit t('.submit'), class: 'btn btn-primary'

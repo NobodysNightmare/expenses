@@ -15,6 +15,8 @@ de:
     created_model: "%{model} wurde erstellt."
     updated_model: "%{model} wurde gespeichert."
     destroyed_model: "%{model} wurde gelöscht."
+  navigation:
+    import_expenses: "Importieren"
   titles:
     brand: Ausgaben
     new_model: "%{model} anlegen"

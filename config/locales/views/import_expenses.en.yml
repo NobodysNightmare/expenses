@@ -1,0 +1,5 @@
+en:
+  import_expenses:
+    index:
+      submit: "Import"
+      title: "Import expenses"

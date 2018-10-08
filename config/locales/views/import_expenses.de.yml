@@ -1,0 +1,5 @@
+de:
+  import_expenses:
+    index:
+      submit: "Importieren"
+      title: "Ausgaben importieren"
