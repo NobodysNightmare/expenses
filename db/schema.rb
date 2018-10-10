@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_09_19_071200) do
   end
 
   create_table "expenses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category_id", null: false
+    t.integer "category_id"
     t.date "date", null: false
     t.string "description", null: false
     t.decimal "amount", precision: 8, scale: 2, null: false
@@ -48,4 +48,5 @@ ActiveRecord::Schema.define(version: 2018_09_19_071200) do
     t.index ["user_id"], name: "index_users_on_user_id", unique: true
   end
 
+  add_foreign_key "expenses", "categories", on_delete: :nullify
 end

@@ -11,8 +11,7 @@ class ExpensesCsvImporter
         Expense.create!(
           date: date,
           description: row[1],
-          amount: amount,
-          category_id: Category.first.id # TODO: allow NULL category
+          amount: amount
         )
       end
     end

@@ -5,5 +5,5 @@
       %th= Expense.human_attribute_name(:amount)
   - @top_categories.each do |category, total_amount|
     %tr
-      %td= category.name
+      %td= category&.name || I18n.t('no_category')
       %td= format_amount(total_amount)

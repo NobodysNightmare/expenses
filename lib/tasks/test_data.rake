@@ -8,16 +8,18 @@ namespace :test_data do
       break
     end
 
-    categories = (1..5).map do |i|
+    categories = (1..4).map do |i|
       Category.create!(name: "Category #{i}")
     end
+
+    categories << nil
 
     500.times do
       time = rand(0..180)
       amount = rand * 100
       category = categories.sample
       Expense.create!(
-        description: "Some expense #{category.id}",
+        description: "Some expense #{category&.id || '-'}",
         date: time.days.ago,
         amount: amount,
         category: category

@@ -2,6 +2,7 @@ en:
   action_column: Actions
   confirm_delete_model: "Really delete %{model}?"
   confirm_delete_named: "Really delete '%{name}'?"
+  no_category: "No Category"
   time_ago: "%{time} ago"
   actions:
     edit: Edit
