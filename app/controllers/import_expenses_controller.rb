@@ -2,7 +2,10 @@
 
 class ImportExpensesController < ApplicationController
   def create
-    ExpensesCsvImporter.new.import(params[:import_string])
+    importer = ExpensesCsvImporter.new
+    imported_count = importer.import(params[:import_string])
+
+    flash[:success] = t('.successful_import', count: imported_count)
     redirect_to import_expenses_path
   end
 

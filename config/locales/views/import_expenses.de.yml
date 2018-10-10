@@ -1,5 +1,7 @@
 de:
   import_expenses:
+    create:
+      successful_import: "%{count} Ausgaben wurden importiert."
     index:
       submit: "Importieren"
       title: "Ausgaben importieren"
