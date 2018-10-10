@@ -55,6 +55,6 @@ class ExpensesController < ApplicationController
   end
 
   def description_autocomplete
-    Expense.order(:description).pluck('DISTINCT(description)')
+    Expense.order(:description).distinct.pluck(:description)
   end
 end
