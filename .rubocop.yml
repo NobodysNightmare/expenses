@@ -11,6 +11,7 @@ Metrics/BlockLength:
   ExcludedMethods:
     - describe
     - context
+    - namespace
 
 Metrics/LineLength:
   Max: 120
