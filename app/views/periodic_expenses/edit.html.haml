@@ -1,0 +1,35 @@
+.card.my-3
+  .card-header
+    - if @periodic_expense.new_record?
+      = I18n.t('titles.new_model', model: PeriodicExpense.model_name.human)
+    - else
+      = I18n.t('titles.edit_model', model: PeriodicExpense.model_name.human)
+  .card-body
+    = form_with model: @periodic_expense do |f|
+      .form-group
+        = f.label :description
+        = f.text_field :description, class: 'form-control'
+
+      .form-group
+        = f.label :amount
+        = f.text_field :amount, class: 'form-control', type: 'number', step: '0.01'
+
+      .form-group
+        = f.label :periodicity
+        = f.select :periodicity, my_enum_options(PeriodicExpense, :periodicity, @periodic_expense.periodicity), {}, class: 'form-control'
+
+      .form-group
+        = f.label :category_id
+        = f.select :category_id, category_options(@periodic_expense.category_id), {}, class: 'form-control'
+
+      = f.submit I18n.t('buttons.save'), class: 'btn btn-success'
+
+- unless @periodic_expense.new_record?
+  .card.my-3
+    .card-header.bg-danger.text-white
+      = I18n.t('titles.destroy_model', model: PeriodicExpense.model_name.human)
+    .card-body
+      = link_to I18n.t('buttons.delete'), periodic_expense_path(@periodic_expense),
+                method: :delete,
+                class: 'btn btn-danger',
+                data: { confirm: I18n.t('confirm_delete_named', name: @periodic_expense.description) }

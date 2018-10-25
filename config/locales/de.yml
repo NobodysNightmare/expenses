@@ -31,6 +31,9 @@ de:
       expense:
         one: Ausgabe
         other: Ausgaben
+      periodic_expense:
+        one: Regelmäßige Ausgabe
+        other: Regelmäßige Ausgaben
     attributes:
       category:
         name: Name
@@ -39,3 +42,8 @@ de:
         category_id: Kategorie
         description: Beschreibung
         date: Datum
+      periodic_expense:
+        amount: Betrag
+        category_id: Kategorie
+        description: Beschreibung
+        periodicity: Intervall

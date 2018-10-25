@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       post :import, to: 'import_expenses#create'
     end
   end
+  resources :periodic_expenses, only: %i[index new edit create update destroy]
 
   namespace :api do
   end

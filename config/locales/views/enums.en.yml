@@ -1,0 +1,7 @@
+en:
+  enums:
+    periodic_expense:
+      periodicities:
+        monthly: monthly
+        quarterly: quarterly
+        yearly: yearly

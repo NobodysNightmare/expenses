@@ -18,6 +18,8 @@
           %li.nav-item
             %a.nav-link{href: expenses_path}= Expense.model_name.human(count: 2)
           %li.nav-item
+            %a.nav-link{href: periodic_expenses_path}= PeriodicExpense.model_name.human(count: 2)
+          %li.nav-item
             %a.nav-link{href: categories_path}= Category.model_name.human(count: 2)
           %li.nav-item
             %a.nav-link{href: import_expenses_path}= t('navigation.import_expenses')

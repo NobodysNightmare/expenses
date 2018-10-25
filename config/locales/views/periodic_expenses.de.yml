@@ -1,0 +1,12 @@
+de:
+  periodic_expenses:
+    index:
+      monthly:
+        sum: Summe
+        title: Monatlich
+      table:
+        title: Alle regelmäßigen Ausgaben
+      title: "Regelmäßige Ausgaben"
+      yearly:
+        sum: Summe
+        title: Jährlich

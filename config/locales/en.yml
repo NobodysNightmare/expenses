@@ -31,6 +31,9 @@ en:
       expense:
         one: Expense
         other: Expenses
+      periodic_expense:
+        one: Periodic Expense
+        other: Periodic Expenses
     attributes:
       category:
         name: Name
@@ -39,3 +42,8 @@ en:
         category_id: Category
         description: Description
         date: Date
+      periodic_expense:
+        amount: Amount
+        category_id: Category
+        description: Description
+        periodicity: Periodicity

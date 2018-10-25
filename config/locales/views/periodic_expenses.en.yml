@@ -1,0 +1,12 @@
+en:
+  periodic_expenses:
+    index:
+      monthly:
+        sum: Sum
+        title: Monthly
+      table:
+        title: All regular expenses
+      title: "Periodic Expenses"
+      yearly:
+        sum: Sum
+        title: Yearly

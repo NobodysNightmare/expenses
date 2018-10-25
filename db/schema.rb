@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_19_071200) do
+ActiveRecord::Schema.define(version: 2018_10_24_070800) do
 
   create_table "api_keys", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 2018_09_19_071200) do
     t.index ["date"], name: "index_expenses_on_date"
   end
 
+  create_table "periodic_expenses", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category_id"
+    t.string "description", null: false
+    t.decimal "amount", precision: 8, scale: 2, null: false
+    t.integer "periodicity", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_periodic_expenses_on_category_id"
+  end
+
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_id", limit: 100, null: false
     t.string "email", default: "", null: false
@@ -49,4 +59,5 @@ ActiveRecord::Schema.define(version: 2018_09_19_071200) do
   end
 
   add_foreign_key "expenses", "categories", on_delete: :nullify
+  add_foreign_key "periodic_expenses", "categories", on_delete: :nullify
 end
