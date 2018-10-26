@@ -13,6 +13,7 @@ en:
       totals:
         current: Current
         month: Month
+        more: Show more...
         previous: Previous
         title: Totals
         week: Week

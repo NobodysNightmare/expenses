@@ -3,28 +3,38 @@
 class DateInterval
   INTERVAL_TYPES = %i[week month year].freeze
 
-  class << self
-    def interval(type, date)
-      check_interval_type!(type)
-      public_send(type, date)
-    end
+  def initialize(type, date)
+    check_interval_type!(type)
+    @type = type
+    @date = date
+  end
 
-    def week(date)
-      date.beginning_of_week..date.end_of_week
-    end
+  def range
+    @date.public_send("beginning_of_#{@type}")..@date.public_send("end_of_#{@type}")
+  end
 
-    def month(date)
-      date.beginning_of_month..date.end_of_month
+  def display_name
+    case @type.to_sym
+    when :week
+      @date.strftime('%V / %G')
+    when :month
+      @date.strftime('%B %Y')
+    when :year
+      @date.strftime('%Y')
     end
+  end
 
-    def year(date)
-      date.beginning_of_year..date.end_of_year
-    end
+  def previous
+    self.class.new(@type, @date - 1.public_send(@type))
+  end
 
-    private
+  def next
+    self.class.new(@type, @date + 1.public_send(@type))
+  end
 
-    def check_interval_type!(type)
-      raise ArgumentError, "Unsupported interval type '#{type}'" unless INTERVAL_TYPES.include?(type.to_sym)
-    end
+  private
+
+  def check_interval_type!(type)
+    raise ArgumentError, "Unsupported interval type '#{type}'" unless INTERVAL_TYPES.include?(type.to_sym)
   end
 end

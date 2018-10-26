@@ -11,22 +11,36 @@ class ExpenseTotals
 
   def weekly
     @weekly ||= PreviousAndCurrent.new(
-      expenses.where(date: DateInterval.week(Date.current - 1.week)).sum(:amount),
-      expenses.where(date: DateInterval.week(Date.current)).sum(:amount)
+      expenses.where(date: this_week.previous.range).sum(:amount),
+      expenses.where(date: this_week.range).sum(:amount)
     )
   end
 
   def monthly
     @monthly ||= PreviousAndCurrent.new(
-      expenses.where(date: DateInterval.month(Date.current - 1.month)).sum(:amount),
-      expenses.where(date: DateInterval.month(Date.current)).sum(:amount)
+      expenses.where(date: this_month.previous.range).sum(:amount),
+      expenses.where(date: this_month.range).sum(:amount)
     )
   end
 
   def yearly
     @yearly ||= PreviousAndCurrent.new(
-      expenses.where(date: DateInterval.year(Date.current - 1.year)).sum(:amount),
-      expenses.where(date: DateInterval.year(Date.current)).sum(:amount)
+      expenses.where(date: this_year.previous.range).sum(:amount),
+      expenses.where(date: this_year.range).sum(:amount)
     )
+  end
+
+  private
+
+  def this_week
+    DateInterval.new(:week, Date.current)
+  end
+
+  def this_month
+    DateInterval.new(:month, Date.current)
+  end
+
+  def this_year
+    DateInterval.new(:year, Date.current)
   end
 end

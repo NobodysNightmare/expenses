@@ -1,0 +1,11 @@
+de:
+  expenses_history:
+    index:
+      interval:
+        month: monatlich
+        week: wöchentlich
+        year: jährlich
+      table:
+        time: Zeit
+        title: Gesamtausgaben
+      title: Ausgabenverlauf

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
         end
       end
 
+      get :history, to: 'expenses_history#index'
+
       get :import, to: 'import_expenses#index'
       post :import, to: 'import_expenses#create'
     end

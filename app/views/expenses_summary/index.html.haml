@@ -22,6 +22,8 @@
           %td= t('.totals.year')
           %td= format_amount(@expense_totals.yearly.previous)
           %td= format_amount(@expense_totals.yearly.current)
+      .card-footer
+        %a{ href: history_expenses_path }= t('.totals.more')
 
   .col-12.col-md-6
     .card.mb-3

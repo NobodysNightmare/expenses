@@ -11,7 +11,7 @@ class TopCategories
   end
 
   def calculate
-    Expense.where(date: DateInterval.interval(@interval, Date.current))
+    Expense.where(date: DateInterval.new(@interval, Date.current).range)
            .group(:category)
            .order('SUM(amount) DESC')
            .limit(COUNT)

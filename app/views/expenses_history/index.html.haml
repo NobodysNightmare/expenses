@@ -1,0 +1,22 @@
+.row.justify-content-between
+  %h1.col-auto= t('.title')
+  .col-auto.col-md-4.mb-3
+    %select.form-control.reload-on-select{ data: { path: history_expenses_path, param: 'interval' } }
+      = options_for_select([[t('.interval.week'), 'week'],
+                            [t('.interval.month'), 'month'],
+                            [t('.interval.year'), 'year']],
+                           @chosen_interval)
+
+.row
+  .col-12
+    .card
+      .card-header= t('.table.title')
+      %table.table
+        %thead
+          %tr
+            %th= t('.table.time')
+            %th= Expense.human_attribute_name(:amount)
+        - @expense_totals.each do |time, amount|
+          %tr
+            %td= time
+            %td= format_amount amount

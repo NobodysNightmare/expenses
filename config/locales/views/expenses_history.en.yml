@@ -1,0 +1,11 @@
+en:
+  expenses_history:
+    index:
+      interval:
+        month: Monthly
+        week: Weekly
+        year: Yearly
+      table:
+        time: Time
+        title: Total expenses
+      title: Expense History
