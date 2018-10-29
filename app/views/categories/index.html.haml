@@ -2,6 +2,7 @@
   %h1.col-auto= t('.title')
   .col-auto
     %a.btn.btn-success.mb-2{ href: new_category_path }
+      %i.fa.fa-plus
       = t('buttons.create_model', model: Category.model_name.human)
 
 %table.table

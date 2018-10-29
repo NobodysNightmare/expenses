@@ -2,6 +2,7 @@
   %h1.col-auto= t('.title')
   .col-auto
     %a.btn.btn-success.mb-2{ href: new_expense_path }
+      %i.fa.fa-plus
       = t('buttons.create_model', model: Expense.model_name.human)
 
 = render 'table', expenses: @expenses

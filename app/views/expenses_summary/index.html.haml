@@ -1,4 +1,10 @@
-%h1= t('.title')
+.row.justify-content-between
+  %h1.col-auto= t('.title')
+  .col-auto
+    %a.btn.btn-success.mb-2{ href: new_expense_path }
+      %i.fa.fa-plus
+      .d-none.d-sm-inline
+        = t('buttons.create_model', model: Expense.model_name.human)
 
 .row
   .col-12.col-md-6
