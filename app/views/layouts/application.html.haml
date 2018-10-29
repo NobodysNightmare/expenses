@@ -19,10 +19,12 @@
             %a.nav-link{href: expenses_path}= Expense.model_name.human(count: 2)
           %li.nav-item
             %a.nav-link{href: periodic_expenses_path}= PeriodicExpense.model_name.human(count: 2)
-          %li.nav-item
-            %a.nav-link{href: categories_path}= Category.model_name.human(count: 2)
-          %li.nav-item
-            %a.nav-link{href: import_expenses_path}= t('navigation.import_expenses')
+          %li.nav-item.dropdown
+            %a.nav-link.dropdown-toggle{ role: 'button', data: { toggle: 'dropdown' }}
+              = t('navigation.admin')
+            .dropdown-menu
+              %a.dropdown-item{href: categories_path}= Category.model_name.human(count: 2)
+              %a.dropdown-item{href: import_expenses_path}= t('navigation.import_expenses')
 
     .container-fluid
       - flash.each do |type, messages|

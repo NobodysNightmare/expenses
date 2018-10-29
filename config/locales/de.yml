@@ -17,7 +17,8 @@ de:
     updated_model: "%{model} wurde gespeichert."
     destroyed_model: "%{model} wurde gelöscht."
   navigation:
-    import_expenses: "Importieren"
+    admin: "Verwaltung"
+    import_expenses: "Ausgaben importieren"
   titles:
     brand: Ausgaben
     new_model: "%{model} anlegen"
