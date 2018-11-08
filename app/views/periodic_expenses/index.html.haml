@@ -1,5 +1,5 @@
 .row.justify-content-between
-  %h1.col-auto= t('.title')
+  %h1.h2.col-auto= t('.title')
   .col-auto
     %a.btn.btn-success.mb-2{ href: new_periodic_expense_path }
       %i.fa.fa-plus
@@ -7,7 +7,7 @@
         = t('buttons.create_model', model: PeriodicExpense.model_name.human)
 
 .row
-  .col-6
+  .col-sm-6
     .card.mb-3
       .card-header= t('.monthly.title')
       %table.table
@@ -25,7 +25,7 @@
           %td
             %strong= format_amount(@monthly_cost.values.sum)
 
-  .col-6
+  .col-sm-6
     .card.mb-3
       .card-header= t('.yearly.title')
       %table.table
