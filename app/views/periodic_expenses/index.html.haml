@@ -46,14 +46,15 @@
 .card
   .card-header
     = t('.table.title')
-  %table.table
-    %thead
-      %tr
-        %th= PeriodicExpense.human_attribute_name(:description)
-        %th= PeriodicExpense.human_attribute_name(:periodicity)
-        %th= PeriodicExpense.human_attribute_name(:amount)
-    - @periodic_expenses.each do |periodic_expense|
-      %tr
-        %td= link_to periodic_expense.description, edit_periodic_expense_path(periodic_expense)
-        %td= periodic_expense.human_enum_value(:periodicity)
-        %td= format_amount periodic_expense.amount
+  .table-responsive-sm
+    %table.table
+      %thead
+        %tr
+          %th= PeriodicExpense.human_attribute_name(:description)
+          %th= PeriodicExpense.human_attribute_name(:periodicity)
+          %th= PeriodicExpense.human_attribute_name(:amount)
+      - @periodic_expenses.each do |periodic_expense|
+        %tr
+          %td= link_to periodic_expense.description, edit_periodic_expense_path(periodic_expense)
+          %td= periodic_expense.human_enum_value(:periodicity)
+          %td= format_amount periodic_expense.amount
