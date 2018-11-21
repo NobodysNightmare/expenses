@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
       get :import, to: 'import_expenses#index'
       post :import, to: 'import_expenses#create'
+
+      get :guess_category
     end
   end
   resources :periodic_expenses, only: %i[index new edit create update destroy]

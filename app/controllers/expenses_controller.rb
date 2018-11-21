@@ -29,6 +29,16 @@ class ExpensesController < ApplicationController
     redirect_to action: :index
   end
 
+  def guess_category
+    category_id = Expense.where(description: params[:description])
+                         .group(:category_id)
+                         .order('COUNT(*) DESC')
+                         .select(:category_id)
+                         .first
+                         &.category_id
+    render json: { category_id: category_id }
+  end
+
   def update
     expense = Expense.find(params[:id])
     if expense.update(expense_params)

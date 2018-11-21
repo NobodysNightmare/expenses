@@ -12,7 +12,8 @@
 
       .form-group
         = f.label :description
-        = f.text_field :description, class: 'form-control', list: 'description-list'
+        // todo: data-target ID
+        = f.text_field :description, class: 'form-control guess-category', list: 'description-list', data: { target: '#category-select' }
         %datalist#description-list
           - @description_autocomplete.each do |entry|
             %option= entry
@@ -23,7 +24,7 @@
 
       .form-group
         = f.label :category_id
-        = f.select :category_id, category_options(@expense.category_id), {}, class: 'form-control'
+        = f.select :category_id, category_options(@expense.category_id), {}, class: 'form-control', id: 'category-select'
 
       = f.submit I18n.t('buttons.save'), class: 'btn btn-success'
 
