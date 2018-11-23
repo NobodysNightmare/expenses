@@ -31,6 +31,7 @@ class ExpensesController < ApplicationController
 
   def guess_category
     category_id = Expense.where(description: params[:description])
+                         .where.not(category_id: nil)
                          .group(:category_id)
                          .order('COUNT(*) DESC')
                          .select(:category_id)
