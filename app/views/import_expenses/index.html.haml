@@ -1,7 +1,7 @@
 %h1.h2= t('.title')
 
 .card
-  = form_with url: { controller: :import_expenses, action: :create } do |f|
+  = form_with url: { controller: :import_expenses, action: :create }, local: true do |f|
     .card-body
       .form-group
         = f.label :import_string

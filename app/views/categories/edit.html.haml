@@ -5,7 +5,7 @@
     - else
       = I18n.t('titles.edit_model', model: Category.model_name.human)
   .card-body
-    = form_with model: @category do |f|
+    = form_with model: @category, local: true do |f|
       .form-group
         = f.label :name
         = f.text_field :name, class: 'form-control'
