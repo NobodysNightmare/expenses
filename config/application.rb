@@ -29,5 +29,6 @@ module Sprit
     config.time_zone = 'Europe/Berlin'
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]
+    I18n.available_locales = [:de, :en]
   end
 end
